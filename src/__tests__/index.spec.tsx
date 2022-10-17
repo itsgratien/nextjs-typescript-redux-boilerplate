@@ -5,6 +5,6 @@ describe('Home Page', () => {
   test('without crashing', () => {
     render(<Home />);
 
-    expect(screen.getByTestId('greeting').textContent).toEqual('Hello world!');
+    expect(screen.getByTestId('greeting').textContent).toEqual('List of users');
   });
 });

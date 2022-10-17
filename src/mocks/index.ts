@@ -1,13 +1,7 @@
-const init = async () => {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   if (typeof window !== 'undefined') {
-    const { browser } = await import('./Browser');
-    browser.start();
-  } else {
-    const { server } = await import('./Server');
-    server.listen();
+    const { worker } = require('./Browser');
+    worker.start();
   }
-};
-
-init();
-
+}
 export {};

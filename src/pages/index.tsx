@@ -2,8 +2,23 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
+import { getUsersAction } from '@/redux/Actions/UserAction';
+import { useAppSelector, useAppDispatch } from '@/hooks/useRedux';
 
 const Home: NextPage = () => {
+  const dispatch = useAppDispatch();
+
+  const selector = useAppSelector((state) => ({
+    users: state.userReducer.getUsersSuccess,
+    loading: state.userReducer.getUsersLoading,
+  }));
+
+  const { users, loading } = selector;
+
+  React.useEffect(() => {
+    dispatch(getUsersAction());
+  }, [dispatch]);
+
   return (
     <div className={styles.home}>
       <Head>
@@ -12,8 +27,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-3xl font-bold underline" data-testid="greeting">
-        Hello world!
+        List of users
       </h1>
+      {!loading && users && users.length > 0 && (
+        <>
+          {users.map((item, itemKey) => (
+            <li key={itemKey}>{item.username}</li>
+          ))}
+        </>
+      )}
+      {loading && <div className="font-bold">Loading ...</div>}
     </div>
   );
 };
