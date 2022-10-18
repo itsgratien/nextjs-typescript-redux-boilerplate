@@ -30,13 +30,17 @@ const Home: NextPage = () => {
         List of users
       </h1>
       {!loading && users && users.length > 0 && (
-        <>
+        <ul>
           {users.map((item, itemKey) => (
             <li key={itemKey}>{item.username}</li>
           ))}
-        </>
+        </ul>
       )}
-      {loading && <div className="font-bold">Loading ...</div>}
+      {loading && (
+        <div className="font-bold" data-testid="loading">
+          Loading ...
+        </div>
+      )}
     </div>
   );
 };
