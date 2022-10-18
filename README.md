@@ -34,6 +34,8 @@
 - [MSW](https://mswjs.io/)
 - [Jest](https://jestjs.io/docs/getting-started)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Husky](https://github.com/typicode/husky)
+- [Commit Lint](https://commitlint.js.org/#/)
 
 ## Directory Structures
 
