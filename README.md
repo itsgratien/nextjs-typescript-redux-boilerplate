@@ -1,6 +1,4 @@
-# UPG V2 Bank Office Portal
-
-Urubuto Payment Gateway Version 2 Bank Office Portal
+# Next JS Boilerplate 
 
 - [Guides](#guides)
 
@@ -41,7 +39,6 @@ Urubuto Payment Gateway Version 2 Bank Office Portal
 
 `src`:
 
-- `assets` contains static files like images, icons etc
 - `components` contains UI Components
 - `contexts` contains custom context APIs
 - `hooks` contains custom hook code
@@ -50,6 +47,7 @@ Urubuto Payment Gateway Version 2 Bank Office Portal
 - `styles` global styles
 - `types` contains custom types
 - `utils` contains configuration setups
+- `pages` contains next pages
 
 ### How to run project locally ?
 
